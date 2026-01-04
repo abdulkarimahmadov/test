@@ -53,7 +53,7 @@
                             @if (topic.LastActivityDate.HasValue)
                             {
                                 <span class="mx-2">•</span>
-                                <i class="bi bi-chat-left-text"></i> Last activity @topic.LastActivityDate.Value.ToString("MMM dd, yyyy HH:mm")
+                                <i class="bi bi-chat-left-text"></i> <text>Last activity:</text> @topic.LastActivityDate.Value.ToString("MMM dd, yyyy HH:mm")
                             }
                         </p>
                     </div>

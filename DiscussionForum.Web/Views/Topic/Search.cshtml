@@ -1,0 +1,61 @@
+@model IEnumerable<DiscussionForum.Application.DTOs.TopicDto>
+@{
+    ViewData["Title"] = "Search Results";
+    var searchTerm = ViewBag.SearchTerm as string;
+}
+
+<h2><i class="bi bi-search"></i> Search Results for "@searchTerm"</h2>
+<p class="text-muted">Found @Model.Count() topic(s)</p>
+
+<hr />
+
+@if (Model.Any())
+{
+    foreach (var topic in Model)
+    {
+        <div class="card topic-card mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            @if (topic.IsPinned)
+                            {
+                                <i class="bi bi-pin-angle-fill text-warning"></i>
+                            }
+                            @if (topic.IsLocked)
+                            {
+                                <i class="bi bi-lock-fill text-danger"></i>
+                            }
+                            <a href="@Url.Action("Details", "Topic", new { id = topic.Id })" class="text-decoration-none">
+                                @topic.Title
+                            </a>
+                        </h5>
+                        <p class="card-text text-muted small mb-2">
+                            <i class="bi bi-folder"></i> @topic.CategoryName
+                            <span class="mx-2">•</span>
+                            <i class="bi bi-person"></i> @topic.UserDisplayName
+                            <span class="mx-2">•</span>
+                            <i class="bi bi-clock"></i> @topic.CreatedDate.ToString("MMM dd, yyyy")
+                        </p>
+                    </div>
+                    <div class="text-end">
+                        <span class="badge bg-info">@topic.PostCount Replies</span>
+                        <span class="badge bg-secondary">@topic.ViewCount Views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="alert alert-info">
+        <i class="bi bi-info-circle"></i> No topics found matching your search.
+    </div>
+}
+
+<div class="mt-4">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back to Home
+    </a>
+</div>

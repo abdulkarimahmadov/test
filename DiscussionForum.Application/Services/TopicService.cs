@@ -2,7 +2,6 @@ using DiscussionForum.Application.DTOs;
 using DiscussionForum.Application.Interfaces;
 using DiscussionForum.Domain.Entities;
 using DiscussionForum.Domain.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace DiscussionForum.Application.Services;
 
