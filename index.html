@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FZ Academy Sınaq İmtahanı - 11 (28.12.2025)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #202124;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e4c59f 0%, #cea776 100%);
+            padding: 40px;
+            border-top: 10px solid #8b6f47;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .header .subtitle {
+            font-size: 14px;
+            font-style: italic;
+            color: #5f6368;
+            margin-top: 8px;
+        }
+
+        .user-info {
+            background: #f8f9fa;
+            padding: 16px 40px;
+            border-bottom: 1px solid #dadce0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-email {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .switch-account {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .switch-account:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .privacy-icon {
+            width: 20px;
+            height: 20px;
+            background: #e8eaed;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .form-content {
+            padding: 40px;
+        }
+
+        .required-note {
+            font-size: 14px;
+            color: #d93025;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .question:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-title {
+            font-size: 16px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .required-mark {
+            color: #d93025;
+            margin-left: 4px;
+            font-size: 16px;
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: none;
+            border-bottom: 1px solid #dadce0;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .text-input:focus {
+            border-bottom: 2px solid #1a73e8;
+        }
+
+        .input-placeholder {
+            font-size: 14px;
+            color: #5f6368;
+            margin-top: 8px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #dadce0;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: #1a73e8;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #1557b0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a73e8;
+            border: 1px solid #dadce0;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .security-note {
+            font-size: 12px;
+            color: #5f6368;
+            margin-top: 16px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .footer {
+            padding: 24px 40px;
+            background: #f8f9fa;
+            border-top: 1px solid #dadce0;
+            font-size: 12px;
+            color: #5f6368;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-top: 8px;
+        }
+
+        .footer-links a {
+            color: #1a73e8;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .google-forms-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 16px;
+            gap: 8px;
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .logo-g {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #4285f4 0%, #ea4335 25%, #fbbc05 50%, #34a853 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .help-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .help-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 0;
+            }
+
+            .header, .form-content, .footer {
+                padding: 24px 20px;
+            }
+
+            .user-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FZ Academy Sınaq İmtahanı - 11 (28.12.2025)</h1>
+            <div class="subtitle">Magistratura imtahanlarına hazırlıq sınağı (İngilis dili)</div>
+        </div>
+
+        <div class="user-info">
+            <div>
+                <span class="user-email">mclane282@gmail.com</span>
+                <a href="#" class="switch-account">Switch account</a>
+            </div>
+            <div class="privacy-badge">
+                <span class="privacy-icon">🔒</span>
+                <span>Not shared</span>
+            </div>
+        </div>
+
+        <div class="form-content">
+            <div class="required-note">* Indicates required question</div>
+
+            <div class="question">
+                <div class="question-title">
+                    Ad, Soyad
+                    <span class="required-mark">*</span>
+                </div>
+                <input type="text" class="text-input" placeholder="Your answer">
+            </div>
+
+            <div class="question">
+                <div class="question-title">
+                    Qrup
+                    <span class="required-mark">*</span>
+                </div>
+                <input type="text" class="text-input" placeholder="Your answer">
+            </div>
+
+            <div class="question">
+                <div class="question-title">
+                    Əlaqə nömrəsi
+                    <span class="required-mark">*</span>
+                </div>
+                <input type="text" class="text-input" placeholder="Your answer">
+            </div>
+
+            <div class="form-actions">
+                <button class="btn btn-primary">Next</button>
+                <button class="btn btn-secondary">Clear form</button>
+            </div>
+
+            <div class="security-note">
+                Never submit passwords through Google Forms.
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>This content is neither created nor endorsed by Google.</p>
+            <div class="footer-links">
+                <a href="#">Contact form owner</a>
+                <span>-</span>
+                <a href="https://policies.google.com/terms">Terms of Service</a>
+                <span>-</span>
+                <a href="https://policies.google.com/privacy">Privacy Policy</a>
+            </div>
+            <p style="margin-top: 12px;">
+                Does this form look suspicious? <a href="#">Report</a>
+            </p>
+            <div class="google-forms-logo">
+                <div class="logo-g">G</div>
+                <span>Forms</span>
+            </div>
+        </div>
+    </div>
+
+    <button class="help-button" title="Help and feedback">?</button>
+
+    <script>
+        // Add basic form interactivity
+        document.querySelectorAll('.text-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.borderColor = '#1a73e8';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.borderColor = '#dadce0';
+            });
+        });
+
+        // Clear form button
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
+            document.querySelectorAll('.text-input').forEach(input => {
+                input.value = '';
+            });
+        });
+
+        // Next button (validate required fields)
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('.text-input');
+            let allFilled = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    allFilled = false;
+                    input.style.borderBottom = '2px solid #d93025';
+                    setTimeout(() => {
+                        input.style.borderBottom = '1px solid #dadce0';
+                    }, 2000);
+                }
+            });
+            
+            if (allFilled) {
+                alert('Form submitted successfully! (Demo mode)');
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        // Help button
+        document.querySelector('.help-button').addEventListener('click', function() {
+            alert('Help Menu:\n- Contact form owner\n- Help Forms improve\n- Report');
+        });
+    </script>
+</body>
+</html>
