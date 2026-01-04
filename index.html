@@ -416,6 +416,30 @@
         document.querySelector('.help-button').addEventListener('click', function() {
             alert('Help Menu:\n- Contact form owner\n- Help Forms improve\n- Report');
         });
+
+        // Switch account link
+        document.querySelector('.switch-account').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Switch account functionality (Demo mode)\n\nIn a real Google Form, this would allow you to switch between different Google accounts.');
+        });
+
+        // Contact form owner link
+        document.querySelector('a[href="#"]').addEventListener('click', function(e) {
+            if (this.textContent === 'Contact form owner') {
+                e.preventDefault();
+                alert('Contact Form Owner (Demo mode)\n\nIn a real Google Form, this would open a dialog to contact the form creator.');
+            }
+        });
+
+        // Report link (in footer)
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            if (link.textContent === 'Report') {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Report Form (Demo mode)\n\nIn a real Google Form, this would allow you to report suspicious or abusive content.');
+                });
+            }
+        });
     </script>
 </body>
 </html>
