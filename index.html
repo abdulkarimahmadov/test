@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FZ Academy Sınaq İmtahanı - 11 (28.12.2025)</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Roboto', 'Arial', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -18,7 +13,6 @@
             padding: 20px;
             color: #202124;
         }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -27,13 +21,11 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             overflow: hidden;
         }
-
         .header {
             background: linear-gradient(135deg, #e4c59f 0%, #cea776 100%);
             padding: 40px;
             border-top: 10px solid #8b6f47;
         }
-
         .header h1 {
             font-size: 32px;
             font-weight: 400;
@@ -41,14 +33,12 @@
             margin-bottom: 10px;
             line-height: 1.4;
         }
-
         .header .subtitle {
             font-size: 14px;
             font-style: italic;
             color: #5f6368;
             margin-top: 8px;
         }
-
         .user-info {
             background: #f8f9fa;
             padding: 16px 40px;
@@ -56,23 +46,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
-
-        .user-email {
-            font-size: 14px;
-            color: #5f6368;
-        }
-
+        .user-email { font-size: 14px; color: #5f6368; }
         .switch-account {
             color: #1a73e8;
             text-decoration: none;
             font-size: 14px;
+            margin-left: 12px;
         }
-
-        .switch-account:hover {
-            text-decoration: underline;
-        }
-
+        .switch-account:hover { text-decoration: underline; }
         .privacy-badge {
             display: flex;
             align-items: center;
@@ -80,7 +64,6 @@
             font-size: 14px;
             color: #5f6368;
         }
-
         .privacy-icon {
             width: 20px;
             height: 20px;
@@ -91,17 +74,12 @@
             justify-content: center;
             font-size: 12px;
         }
-
-        .form-content {
-            padding: 40px;
-        }
-
+        .form-content { padding: 40px; }
         .required-note {
             font-size: 14px;
             color: #d93025;
             margin-bottom: 30px;
         }
-
         .question {
             margin-bottom: 32px;
             padding: 24px;
@@ -110,26 +88,20 @@
             border-radius: 8px;
             transition: all 0.2s ease;
         }
-
-        .question:hover {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
+        .question:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
         .question-title {
             font-size: 16px;
             font-weight: 400;
             color: #202124;
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
+            line-height: 1.5;
+            white-space: pre-wrap;
         }
-
         .required-mark {
             color: #d93025;
             margin-left: 4px;
             font-size: 16px;
         }
-
         .text-input {
             width: 100%;
             padding: 12px;
@@ -140,17 +112,30 @@
             font-family: inherit;
             transition: border-color 0.2s ease;
         }
-
-        .text-input:focus {
-            border-bottom: 2px solid #1a73e8;
+        .text-input:focus { border-bottom: 2px solid #1a73e8; }
+        .options-group { margin-top: 12px; }
+        .option-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
         }
-
-        .input-placeholder {
+        .option-item:hover { background-color: #f8f9fa; }
+        .option-item input[type="radio"] {
+            margin-top: 3px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        .option-label {
+            flex: 1;
             font-size: 14px;
-            color: #5f6368;
-            margin-top: 8px;
+            color: #202124;
+            line-height: 1.5;
+            cursor: pointer;
         }
-
         .form-actions {
             display: flex;
             gap: 16px;
@@ -158,7 +143,6 @@
             padding-top: 24px;
             border-top: 1px solid #dadce0;
         }
-
         .btn {
             padding: 10px 24px;
             font-size: 14px;
@@ -169,27 +153,20 @@
             transition: all 0.2s ease;
             font-family: inherit;
         }
-
         .btn-primary {
             background: #1a73e8;
             color: #fff;
         }
-
         .btn-primary:hover {
             background: #1557b0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-
         .btn-secondary {
             background: transparent;
             color: #1a73e8;
             border: 1px solid #dadce0;
         }
-
-        .btn-secondary:hover {
-            background: #f8f9fa;
-        }
-
+        .btn-secondary:hover { background: #f8f9fa; }
         .security-note {
             font-size: 12px;
             color: #5f6368;
@@ -198,7 +175,6 @@
             background: #f8f9fa;
             border-radius: 4px;
         }
-
         .footer {
             padding: 24px 40px;
             background: #f8f9fa;
@@ -207,21 +183,13 @@
             color: #5f6368;
             text-align: center;
         }
-
-        .footer-links {
-            margin-top: 8px;
-        }
-
+        .footer-links { margin-top: 8px; }
         .footer-links a {
             color: #1a73e8;
             text-decoration: none;
             margin: 0 8px;
         }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
+        .footer-links a:hover { text-decoration: underline; }
         .google-forms-logo {
             display: flex;
             align-items: center;
@@ -231,7 +199,6 @@
             font-size: 14px;
             color: #5f6368;
         }
-
         .logo-g {
             width: 24px;
             height: 24px;
@@ -244,7 +211,6 @@
             font-weight: bold;
             font-size: 14px;
         }
-
         .help-button {
             position: fixed;
             bottom: 24px;
@@ -260,38 +226,21 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             transition: all 0.2s ease;
         }
-
         .help-button:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
-
         @media (max-width: 768px) {
-            .container {
-                border-radius: 0;
-            }
-
-            .header, .form-content, .footer {
-                padding: 24px 20px;
-            }
-
+            .container { border-radius: 0; }
+            .header, .form-content, .footer { padding: 24px 20px; }
             .user-info {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 12px;
+                padding: 16px 20px;
             }
-
-            .header h1 {
-                font-size: 24px;
-            }
-
-            .form-actions {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
+            .header h1 { font-size: 24px; }
+            .form-actions { flex-direction: column; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
@@ -301,7 +250,6 @@
             <h1>FZ Academy Sınaq İmtahanı - 11 (28.12.2025)</h1>
             <div class="subtitle">Magistratura imtahanlarına hazırlıq sınağı (İngilis dili)</div>
         </div>
-
         <div class="user-info">
             <div>
                 <span class="user-email">mclane282@gmail.com</span>
@@ -312,128 +260,872 @@
                 <span>Not shared</span>
             </div>
         </div>
-
         <div class="form-content">
             <div class="required-note">* Indicates required question</div>
-
             <div class="question">
-                <div class="question-title">
-                    Ad, Soyad
-                    <span class="required-mark">*</span>
-                </div>
-                <input type="text" class="text-input" placeholder="Your answer">
+                <div class="question-title">Ad, Soyad<span class="required-mark">*</span></div>
+                <input type="text" class="text-input" placeholder="Your answer" name="name" required>
             </div>
-
             <div class="question">
-                <div class="question-title">
-                    Qrup
-                    <span class="required-mark">*</span>
-                </div>
-                <input type="text" class="text-input" placeholder="Your answer">
+                <div class="question-title">Qrup<span class="required-mark">*</span></div>
+                <input type="text" class="text-input" placeholder="Your answer" name="group" required>
             </div>
-
             <div class="question">
-                <div class="question-title">
-                    Əlaqə nömrəsi
-                    <span class="required-mark">*</span>
-                </div>
-                <input type="text" class="text-input" placeholder="Your answer">
+                <div class="question-title">Əlaqə nömrəsi<span class="required-mark">*</span></div>
+                <input type="text" class="text-input" placeholder="Your answer" name="contact" required>
             </div>
-
+            <div class="question">
+                <div class="question-title">1.Choose
+the correct statement according to the text.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q1_opt0" name="question_1" value="B) Americans usually celebrate Christmas only with one side of the family.">
+                        <label for="q1_opt0" class="option-label">B) Americans usually celebrate Christmas only with one side of the family.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q1_opt1" name="question_1" value="C) In many countries, Christmas celebrations begin on the night of December 24th.">
+                        <label for="q1_opt1" class="option-label">C) In many countries, Christmas celebrations begin on the night of December 24th.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q1_opt2" name="question_1" value="D) Gift-giving is not a common tradition in the U.S.">
+                        <label for="q1_opt2" class="option-label">D) Gift-giving is not a common tradition in the U.S.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q1_opt3" name="question_1" value="E) Singing and dancing are central parts of Christmas celebrations in the U.S.">
+                        <label for="q1_opt3" class="option-label">E) Singing and dancing are central parts of Christmas celebrations in the U.S.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">2.Which
+of the following questions does the text answer?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q2_opt0" name="question_2" value="B) How did Christmas traditions change in Latin America?">
+                        <label for="q2_opt0" class="option-label">B) How did Christmas traditions change in Latin America?</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q2_opt1" name="question_2" value="C) Why do some Americans dislike exchanging gifts?">
+                        <label for="q2_opt1" class="option-label">C) Why do some Americans dislike exchanging gifts?</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q2_opt2" name="question_2" value="D) What kinds of food are served during Christmas dinner in the U.S.?">
+                        <label for="q2_opt2" class="option-label">D) What kinds of food are served during Christmas dinner in the U.S.?</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q2_opt3" name="question_2" value="E) How expensive Christmas gifts usually are?">
+                        <label for="q2_opt3" class="option-label">E) How expensive Christmas gifts usually are?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">3.
+Answer the question according to the text.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q3_opt0" name="question_3" value="B) Because it allows them to celebrate with different sides of the family.">
+                        <label for="q3_opt0" class="option-label">B) Because it allows them to celebrate with different sides of the family.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q3_opt1" name="question_3" value="C) Because gifts are opened on two different days.">
+                        <label for="q3_opt1" class="option-label">C) Because gifts are opened on two different days.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q3_opt2" name="question_3" value="D) Because relatives travel from other countries.">
+                        <label for="q3_opt2" class="option-label">D) Because relatives travel from other countries.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q3_opt3" name="question_3" value="E) Because it is required by tradition.">
+                        <label for="q3_opt3" class="option-label">E) Because it is required by tradition.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">4.
+Answer the question according to the text.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q4_opt0" name="question_4" value="B) at midnight">
+                        <label for="q4_opt0" class="option-label">B) at midnight</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q4_opt1" name="question_4" value="C) on Christmas morning">
+                        <label for="q4_opt1" class="option-label">C) on Christmas morning</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q4_opt2" name="question_4" value="D) after the family dinner">
+                        <label for="q4_opt2" class="option-label">D) after the family dinner</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q4_opt3" name="question_4" value="E) on December 26th">
+                        <label for="q4_opt3" class="option-label">E) on December 26th</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">5.Complete
+the sentence according to the text.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q5_opt0" name="question_5" value="B) attend public festivals">
+                        <label for="q5_opt0" class="option-label">B) attend public festivals</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q5_opt1" name="question_5" value="C) focus on talking and sharing meals together">
+                        <label for="q5_opt1" class="option-label">C) focus on talking and sharing meals together</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q5_opt2" name="question_5" value="D) exchange gifts only with children">
+                        <label for="q5_opt2" class="option-label">D) exchange gifts only with children</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q5_opt3" name="question_5" value="E) celebrate mostly outdoors">
+                        <label for="q5_opt3" class="option-label">E) celebrate mostly outdoors</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">7.Complete
+the sentence according to the passage.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q6_opt0" name="question_6" value="B) people prefer to celebrate Christmas alone">
+                        <label for="q6_opt0" class="option-label">B) people prefer to celebrate Christmas alone</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q6_opt1" name="question_6" value="C) online messages have replaced traditional cards">
+                        <label for="q6_opt1" class="option-label">C) online messages have replaced traditional cards</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q6_opt2" name="question_6" value="D) Christmas cards are no longer produced">
+                        <label for="q6_opt2" class="option-label">D) Christmas cards are no longer produced</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q6_opt3" name="question_6" value="E) sending cards is not a tradition anymore">
+                        <label for="q6_opt3" class="option-label">E) sending cards is not a tradition anymore</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">8.Answer
+the question according to the passage.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q7_opt0" name="question_7" value="B) to copy modern social trends.">
+                        <label for="q7_opt0" class="option-label">B) to copy modern social trends.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q7_opt1" name="question_7" value="C) to celebrate the New Year.">
+                        <label for="q7_opt1" class="option-label">C) to celebrate the New Year.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q7_opt2" name="question_7" value="D) to symbolise the gifts given by the Three Wise Men.">
+                        <label for="q7_opt2" class="option-label">D) to symbolise the gifts given by the Three Wise Men.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q7_opt3" name="question_7" value="E) to encourage children to behave well.">
+                        <label for="q7_opt3" class="option-label">E) to encourage children to behave well.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">9.What
+does the word <i>âtraditionsâ</i> mean in the passage?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q8_opt0" name="question_8" value="B) habits and customs passed down over time">
+                        <label for="q8_opt0" class="option-label">B) habits and customs passed down over time</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q8_opt1" name="question_8" value="C) rules created by governments">
+                        <label for="q8_opt1" class="option-label">C) rules created by governments</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q8_opt2" name="question_8" value="D) events organised by schools">
+                        <label for="q8_opt2" class="option-label">D) events organised by schools</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q8_opt3" name="question_8" value="E) actions done only by children">
+                        <label for="q8_opt3" class="option-label">E) actions done only by children</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">12. Complete
+the sentence according to the passage.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q9_opt0" name="question_9" value="B) celebrate Scottish history">
+                        <label for="q9_opt0" class="option-label">B) celebrate Scottish history</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q9_opt1" name="question_9" value="C) remember old friends">
+                        <label for="q9_opt1" class="option-label">C) remember old friends</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q9_opt2" name="question_9" value="D) start the fireworks display">
+                        <label for="q9_opt2" class="option-label">D) start the fireworks display</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q9_opt3" name="question_9" value="E) make New Year’s resolutions">
+                        <label for="q9_opt3" class="option-label">E) make New Year’s resolutions</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">13.
+Answer the question according to the passage.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q10_opt0" name="question_10" value="B) staying at home with family">
+                        <label for="q10_opt0" class="option-label">B) staying at home with family</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q10_opt1" name="question_10" value="C) receiving a visit from the first person of the year with a gift">
+                        <label for="q10_opt1" class="option-label">C) receiving a visit from the first person of the year with a gift</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q10_opt2" name="question_10" value="D) making New Year’s resolutions">
+                        <label for="q10_opt2" class="option-label">D) making New Year’s resolutions</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q10_opt3" name="question_10" value="E) singing traditional songs">
+                        <label for="q10_opt3" class="option-label">E) singing traditional songs</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">14.
+What does the word <i>âresolutionsâ</i> mean in the passage?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q11_opt0" name="question_11" value="B) problems that need solving">
+                        <label for="q11_opt0" class="option-label">B) problems that need solving</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q11_opt1" name="question_11" value="C) gifts given to friends">
+                        <label for="q11_opt1" class="option-label">C) gifts given to friends</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q11_opt2" name="question_11" value="D) celebrations at the end of the year">
+                        <label for="q11_opt2" class="option-label">D) celebrations at the end of the year</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q11_opt3" name="question_11" value="E) plans to make positive changes">
+                        <label for="q11_opt3" class="option-label">E) plans to make positive changes</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">16.Choose the correct words.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q12_opt0" name="question_12" value="B) much, more">
+                        <label for="q12_opt0" class="option-label">B) much, more</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q12_opt1" name="question_12" value="C)- , lot of">
+                        <label for="q12_opt1" class="option-label">C)- , lot of</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q12_opt2" name="question_12" value="D) much, fewer">
+                        <label for="q12_opt2" class="option-label">D) much, fewer</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q12_opt3" name="question_12" value="E) more, a few">
+                        <label for="q12_opt3" class="option-label">E) more, a few</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">17. </div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q13_opt0" name="question_13" value="B) ill, poor, silly">
+                        <label for="q13_opt0" class="option-label">B) ill, poor, silly</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q13_opt1" name="question_13" value="C) strong, rich, clever">
+                        <label for="q13_opt1" class="option-label">C) strong, rich, clever</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q13_opt2" name="question_13" value="D) sick, happy, sensible">
+                        <label for="q13_opt2" class="option-label">D) sick, happy, sensible</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q13_opt3" name="question_13" value="E) strong, happy, honest">
+                        <label for="q13_opt3" class="option-label">E) strong, happy, honest</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">18. Choose the correct question to
+the underlined part of the sentence.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q14_opt0" name="question_14" value="B) How many pictures there were on the walls?">
+                        <label for="q14_opt0" class="option-label">B) How many pictures there were on the walls?</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q14_opt1" name="question_14" value="C) How much pictures were there on the walls?">
+                        <label for="q14_opt1" class="option-label">C) How much pictures were there on the walls?</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q14_opt2" name="question_14" value="D) How many pictures were there on the walls?">
+                        <label for="q14_opt2" class="option-label">D) How many pictures were there on the walls?</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q14_opt3" name="question_14" value="E) How many pictures was there on the walls?">
+                        <label for="q14_opt3" class="option-label">E) How many pictures was there on the walls?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">19.Choose the correct tense forms.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q15_opt0" name="question_15" value="B) seemed, had met">
+                        <label for="q15_opt0" class="option-label">B) seemed, had met</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q15_opt1" name="question_15" value="C) seemed, had been met">
+                        <label for="q15_opt1" class="option-label">C) seemed, had been met</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q15_opt2" name="question_15" value="D) seemed, have met">
+                        <label for="q15_opt2" class="option-label">D) seemed, have met</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q15_opt3" name="question_15" value="E) seems, had met">
+                        <label for="q15_opt3" class="option-label">E) seems, had met</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">20. Make up a dialogue</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q16_opt0" name="question_16" value="B) 6, 7, 5, 2, 4, 1, 8, 3">
+                        <label for="q16_opt0" class="option-label">B) 6, 7, 5, 2, 4, 1, 8, 3</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q16_opt1" name="question_16" value="C) 5, 2, 3, 8, 1, 4, 6, 7">
+                        <label for="q16_opt1" class="option-label">C) 5, 2, 3, 8, 1, 4, 6, 7</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q16_opt2" name="question_16" value="D) 3, 8, 5, 2, 1, 4, 6, 7">
+                        <label for="q16_opt2" class="option-label">D) 3, 8, 5, 2, 1, 4, 6, 7</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q16_opt3" name="question_16" value="E) 5, 1, 4, 2, 3, 8, 6, 7">
+                        <label for="q16_opt3" class="option-label">E) 5, 1, 4, 2, 3, 8, 6, 7</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">36. </div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q17_opt0" name="question_17" value="B) sahə">
+                        <label for="q17_opt0" class="option-label">B) sahə</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q17_opt1" name="question_17" value="C) yazı">
+                        <label for="q17_opt1" class="option-label">C) yazı</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q17_opt2" name="question_17" value="D) qovluq">
+                        <label for="q17_opt2" class="option-label">D) qovluq</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q17_opt3" name="question_17" value="E) kataloq">
+                        <label for="q17_opt3" class="option-label">E) kataloq</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">38. </div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q18_opt0" name="question_18" value="B) 5">
+                        <label for="q18_opt0" class="option-label">B) 5</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q18_opt1" name="question_18" value="C) 24">
+                        <label for="q18_opt1" class="option-label">C) 24</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q18_opt2" name="question_18" value="D) 16">
+                        <label for="q18_opt2" class="option-label">D) 16</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q18_opt3" name="question_18" value="E) mübadilə buferindən silinənə qədər">
+                        <label for="q18_opt3" class="option-label">E) mübadilə buferindən silinənə qədər</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">48.
+FZ Academynin informatika mÃ¼Éllimi MÉdinÉ mÃ¼Éllim yanvar ayÄ±nda tam hazÄ±r olacaq
+99 sÉhifÉlik informatika kitabÄ±nÄ±n sÉhifÉlÉrini qeyd edÉrkÉn neÃ§É dÉfÉ 5
+rÉqÉmindÉn istifadÉ edÉcÉk?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q19_opt0" name="question_19" value="B) 10">
+                        <label for="q19_opt0" class="option-label">B) 10</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q19_opt1" name="question_19" value="C) 20">
+                        <label for="q19_opt1" class="option-label">C) 20</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q19_opt2" name="question_19" value="D) 99">
+                        <label for="q19_opt2" class="option-label">D) 99</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q19_opt3" name="question_19" value="E) 5">
+                        <label for="q19_opt3" class="option-label">E) 5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">51. AÅaÄÄ±da verilmiÅ mÃ¼hakimÉ mÉtninÉ ÉsasÉn doÄru
+cavabÄ± mÃ¼ÉyyÉn edin.(mÉtn reallÄ±ÄÄ± Éks etdirir  â»</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q20_opt0" name="question_20" value="B) Bütün tələbələr çiçəkdir.">
+                        <label for="q20_opt0" class="option-label">B) Bütün tələbələr çiçəkdir.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q20_opt1" name="question_20" value="C) Qar yağanda çiçəklər olmur.">
+                        <label for="q20_opt1" class="option-label">C) Qar yağanda çiçəklər olmur.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q20_opt2" name="question_20" value="D) Çiçəklər FZ Academy-də ancaq payızda olur.">
+                        <label for="q20_opt2" class="option-label">D) Çiçəklər FZ Academy-də ancaq payızda olur.</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q20_opt3" name="question_20" value="E) Çiçəklər uğurların alt çoxluğudur.">
+                        <label for="q20_opt3" class="option-label">E) Çiçəklər uğurların alt çoxluğudur.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">52.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q21_opt0" name="question_21" value="B) Fəzail Zəkəriyyə">
+                        <label for="q21_opt0" class="option-label">B) Fəzail Zəkəriyyə</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q21_opt1" name="question_21" value="C) Arzu Seyidzadə">
+                        <label for="q21_opt1" class="option-label">C) Arzu Seyidzadə</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q21_opt2" name="question_21" value="D) Aydan Tahirli">
+                        <label for="q21_opt2" class="option-label">D) Aydan Tahirli</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q21_opt3" name="question_21" value="E) Nuran İbrahimli">
+                        <label for="q21_opt3" class="option-label">E) Nuran İbrahimli</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">53. Aytac bakalavr tÉhsilini
+2018-ci ildÉ bitirib, 3 il fasilÉdÉn sonra psixologiya sahÉsindÉ magistr oxumaq
+qÉrarÄ±na gÉlir vÉ magistaturaya qÉbul olur, AytacÄ±n ad gÃ¼nÃ¼nÃ¼n  31 dekabrda olduÄu mÉlumdursa, aÅaÄdakÄ± suallardan
+hansÄ±na(hansÄ±larÄ±na) cavab vermÉk mÃ¼mkÃ¼ndÃ¼r?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q22_opt0" name="question_22" value="B) Yalnız 2">
+                        <label for="q22_opt0" class="option-label">B) Yalnız 2</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q22_opt1" name="question_22" value="C) 2,4">
+                        <label for="q22_opt1" class="option-label">C) 2,4</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q22_opt2" name="question_22" value="D) Yalnız 5">
+                        <label for="q22_opt2" class="option-label">D) Yalnız 5</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q22_opt3" name="question_22" value="E)  3,5">
+                        <label for="q22_opt3" class="option-label">E)  3,5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">56.
+Æn bÃ¶yÃ¼k rÉqÉm hansÄ± variantdadÄ±r?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q23_opt0" name="question_23" value="B) 25">
+                        <label for="q23_opt0" class="option-label">B) 25</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q23_opt1" name="question_23" value="C) 6">
+                        <label for="q23_opt1" class="option-label">C) 6</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q23_opt2" name="question_23" value="D) 9">
+                        <label for="q23_opt2" class="option-label">D) 9</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q23_opt3" name="question_23" value="E) 49">
+                        <label for="q23_opt3" class="option-label">E) 49</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">57. FÉrqli variantÄ± seÃ§in</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q24_opt0" name="question_24" value="B) Homo Deus">
+                        <label for="q24_opt0" class="option-label">B) Homo Deus</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q24_opt1" name="question_24" value="C) Homo Erectus">
+                        <label for="q24_opt1" class="option-label">C) Homo Erectus</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q24_opt2" name="question_24" value="D) Homo Neandertalis">
+                        <label for="q24_opt2" class="option-label">D) Homo Neandertalis</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q24_opt3" name="question_24" value="E) Homo Habilis">
+                        <label for="q24_opt3" class="option-label">E) Homo Habilis</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">59.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q25_opt0" name="question_25" value="B) 49">
+                        <label for="q25_opt0" class="option-label">B) 49</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q25_opt1" name="question_25" value="C) 125">
+                        <label for="q25_opt1" class="option-label">C) 125</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q25_opt2" name="question_25" value="D) 81">
+                        <label for="q25_opt2" class="option-label">D) 81</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q25_opt3" name="question_25" value="E) 6">
+                        <label for="q25_opt3" class="option-label">E) 6</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">60.
+</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q26_opt0" name="question_26" value="B) ə f z i l a  b a a b">
+                        <label for="q26_opt0" class="option-label">B) ə f z i l a  b a a b</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q26_opt1" name="question_26" value="C) r a q  z ı q">
+                        <label for="q26_opt1" class="option-label">C) r a q  z ı q</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q26_opt2" name="question_26" value="D) k o l y a">
+                        <label for="q26_opt2" class="option-label">D) k o l y a</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q26_opt3" name="question_26" value="E) l i  e n y i">
+                        <label for="q26_opt3" class="option-label">E) l i  e n y i</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">5</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q27_opt0" name="question_27" value="B) 36">
+                        <label for="q27_opt0" class="option-label">B) 36</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q27_opt1" name="question_27" value="C) 49">
+                        <label for="q27_opt1" class="option-label">C) 49</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q27_opt2" name="question_27" value="D) 81">
+                        <label for="q27_opt2" class="option-label">D) 81</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q27_opt3" name="question_27" value="E) 144">
+                        <label for="q27_opt3" class="option-label">E) 144</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">62. Åaxta baba vÉ QarqÄ±zÄ±n  hal-hazÄ±rda yaÅlarÄ± cÉmi 47-dir. QarqÄ±z Åaxta
+babanÄ±n yaÅÄ±nda olanda Åaxta babanÄ±n yaÅÄ±nÄ±n yarÄ±sÄ± QarqÄ±zÄ±n hazÄ±rkÄ± yaÅÄ±ndan 8
+vahid az olarsa, QarqÄ±z hal-hazÄ±rda neÃ§É yaÅÄ±ndadÄ±r?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q28_opt0" name="question_28" value="B) 21">
+                        <label for="q28_opt0" class="option-label">B) 21</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q28_opt1" name="question_28" value="C) 22">
+                        <label for="q28_opt1" class="option-label">C) 22</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q28_opt2" name="question_28" value="D) 35">
+                        <label for="q28_opt2" class="option-label">D) 35</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q28_opt3" name="question_28" value="E) 15">
+                        <label for="q28_opt3" class="option-label">E) 15</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">63.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q29_opt0" name="question_29" value="B) 16 yanvar">
+                        <label for="q29_opt0" class="option-label">B) 16 yanvar</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q29_opt1" name="question_29" value="C) 12 yanvar">
+                        <label for="q29_opt1" class="option-label">C) 12 yanvar</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q29_opt2" name="question_29" value="D) 15 dekabr">
+                        <label for="q29_opt2" class="option-label">D) 15 dekabr</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q29_opt3" name="question_29" value="E) getməsələr idi daha yaxşı olardı ☻">
+                        <label for="q29_opt3" class="option-label">E) getməsələr idi daha yaxşı olardı ☻</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">68.
+FÉrqli variantÄ± mÃ¼ÉyyÉn edin.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q30_opt0" name="question_30" value="B) t ə k ü t">
+                        <label for="q30_opt0" class="option-label">B) t ə k ü t</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q30_opt1" name="question_30" value="C) r a n a b a b">
+                        <label for="q30_opt1" class="option-label">C) r a n a b a b</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q30_opt2" name="question_30" value="D) i t a g a r">
+                        <label for="q30_opt2" class="option-label">D) i t a g a r</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q30_opt3" name="question_30" value="E) n a ç a k a m">
+                        <label for="q30_opt3" class="option-label">E) n a ç a k a m</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">71.
+QanunauyÄunluÄu mÃ¼ÉyyÉn edin vÉ doÄru cavabÄ± seÃ§in.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q31_opt0" name="question_31" value="B) NƏZRİN BACI">
+                        <label for="q31_opt0" class="option-label">B) NƏZRİN BACI</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q31_opt1" name="question_31" value="C) MAHİR BRAT">
+                        <label for="q31_opt1" class="option-label">C) MAHİR BRAT</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q31_opt2" name="question_31" value="D) TURAL DAYI">
+                        <label for="q31_opt2" class="option-label">D) TURAL DAYI</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q31_opt3" name="question_31" value="E) ELŞAD BABA">
+                        <label for="q31_opt3" class="option-label">E) ELŞAD BABA</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">73.</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q32_opt0" name="question_32" value="B) 36">
+                        <label for="q32_opt0" class="option-label">B) 36</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q32_opt1" name="question_32" value="C) 63">
+                        <label for="q32_opt1" class="option-label">C) 63</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q32_opt2" name="question_32" value="D) 12">
+                        <label for="q32_opt2" class="option-label">D) 12</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q32_opt3" name="question_32" value="E) 21">
+                        <label for="q32_opt3" class="option-label">E) 21</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title"><i>75-77
+nÃ¶mrÉli suallar aÅaÄÄ±dakÄ± mÉtnÉ ÉsasÉn cavablandÄ±rÄ±lmalÄ±dÄ±r.</i></div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q33_opt0" name="question_33" value="B) 1, 3, 4, 5">
+                        <label for="q33_opt0" class="option-label">B) 1, 3, 4, 5</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q33_opt1" name="question_33" value="C) 1, 2, 3">
+                        <label for="q33_opt1" class="option-label">C) 1, 2, 3</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q33_opt2" name="question_33" value="D) 1, 2, 3, 4">
+                        <label for="q33_opt2" class="option-label">D) 1, 2, 3, 4</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q33_opt3" name="question_33" value="E) yalnız 2">
+                        <label for="q33_opt3" class="option-label">E) yalnız 2</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">76.
+AÅaÄÄ±dakÄ±lardan hansÄ±lar mÃ¼tlÉq doÄrudur? <br>
+</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q34_opt0" name="question_34" value="B) 2, 3">
+                        <label for="q34_opt0" class="option-label">B) 2, 3</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q34_opt1" name="question_34" value="C) 1, 5">
+                        <label for="q34_opt1" class="option-label">C) 1, 5</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q34_opt2" name="question_34" value="D) 1, 3">
+                        <label for="q34_opt2" class="option-label">D) 1, 3</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q34_opt3" name="question_34" value="E) 4, 5">
+                        <label for="q34_opt3" class="option-label">E) 4, 5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">77.
+YalnÄ±z gÉlincik gÃ¶tÃ¼rÉn uÅaqlarla heÃ§ bir hÉdiyyÉ gÃ¶tÃ¼rmÉyÉn uÅaqlarÄ±n sayÄ±
+eynidirsÉ, neÃ§É uÅaq maÅÄ±n oyuncaÄÄ± gÃ¶tÃ¼rÃ¼b? </div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q35_opt0" name="question_35" value="B) 6">
+                        <label for="q35_opt0" class="option-label">B) 6</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q35_opt1" name="question_35" value="C) 12">
+                        <label for="q35_opt1" class="option-label">C) 12</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q35_opt2" name="question_35" value="D) 8">
+                        <label for="q35_opt2" class="option-label">D) 8</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q35_opt3" name="question_35" value="E) 9">
+                        <label for="q35_opt3" class="option-label">E) 9</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">80.
+ÆsmÉrin 75 kitabÄ± vardÄ±r. ÆgÉr ÆsmÉr 15 kitabÄ±nÄ± dostu XÉdicÉyÉ verÉrsÉ, onlarÄ±n
+kitablarÄ± bÉrabÉr olar. XÉdicÉnin neÃ§É kitabÄ± var? </div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <input type="radio" id="q36_opt0" name="question_36" value="B) 35">
+                        <label for="q36_opt0" class="option-label">B) 35</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q36_opt1" name="question_36" value="C) 38">
+                        <label for="q36_opt1" class="option-label">C) 38</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q36_opt2" name="question_36" value="D) 40">
+                        <label for="q36_opt2" class="option-label">D) 40</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="q36_opt3" name="question_36" value="E) 45">
+                        <label for="q36_opt3" class="option-label">E) 45</label>
+                    </div>
+                </div>
+            </div>
             <div class="form-actions">
-                <button class="btn btn-primary">Next</button>
-                <button class="btn btn-secondary">Clear form</button>
+                <button class="btn btn-primary" type="button" id="submitBtn">Submit</button>
+                <button class="btn btn-secondary" type="button" id="clearBtn">Clear form</button>
             </div>
-
-            <div class="security-note">
-                Never submit passwords through Google Forms.
-            </div>
+            <div class="security-note">Never submit passwords through Google Forms.</div>
         </div>
-
         <div class="footer">
             <p>This content is neither created nor endorsed by Google.</p>
             <div class="footer-links">
-                <a href="#">Contact form owner</a>
-                <span>-</span>
-                <a href="https://policies.google.com/terms">Terms of Service</a>
-                <span>-</span>
+                <a href="#">Contact form owner</a><span>-</span>
+                <a href="https://policies.google.com/terms">Terms of Service</a><span>-</span>
                 <a href="https://policies.google.com/privacy">Privacy Policy</a>
             </div>
-            <p style="margin-top: 12px;">
-                Does this form look suspicious? <a href="#">Report</a>
-            </p>
-            <div class="google-forms-logo">
-                <div class="logo-g">G</div>
-                <span>Forms</span>
-            </div>
+            <p style="margin-top: 12px;">Does this form look suspicious? <a href="#">Report</a></p>
+            <div class="google-forms-logo"><div class="logo-g">G</div><span>Forms</span></div>
         </div>
     </div>
-
     <button class="help-button" title="Help and feedback">?</button>
-
     <script>
-        // Add basic form interactivity
         document.querySelectorAll('.text-input').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.borderColor = '#1a73e8';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.borderColor = '#dadce0';
-            });
+            input.addEventListener('focus', function() { this.parentElement.style.borderColor = '#1a73e8'; });
+            input.addEventListener('blur', function() { this.parentElement.style.borderColor = '#dadce0'; });
         });
-
-        // Clear form button
-        document.querySelector('.btn-secondary').addEventListener('click', function() {
-            document.querySelectorAll('.text-input').forEach(input => {
-                input.value = '';
-            });
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.querySelectorAll('.text-input').forEach(input => { input.value = ''; });
+            document.querySelectorAll('input[type="radio"]').forEach(radio => { radio.checked = false; });
         });
-
-        // Next button (validate required fields)
-        document.querySelector('.btn-primary').addEventListener('click', function() {
-            const inputs = document.querySelectorAll('.text-input');
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const textInputs = document.querySelectorAll('.text-input[required]');
             let allFilled = true;
-            
-            inputs.forEach(input => {
+            textInputs.forEach(input => {
                 if (!input.value.trim()) {
                     allFilled = false;
                     input.style.borderBottom = '2px solid #d93025';
-                    setTimeout(() => {
-                        input.style.borderBottom = '1px solid #dadce0';
-                    }, 2000);
+                    setTimeout(() => { input.style.borderBottom = '1px solid #dadce0'; }, 2000);
                 }
             });
-            
             if (allFilled) {
-                alert('Form submitted successfully! (Demo mode)');
+                let answeredCount = 0;
+                for (let i = 1; i <= 36; i++) {
+                    const radios = document.getElementsByName('question_' + i);
+                    const checked = Array.from(radios).some(radio => radio.checked);
+                    if (checked) answeredCount++;
+                }
+                alert('Form submitted successfully! (Demo mode)\n\nStudent info: Complete\nQuestions answered: ' + answeredCount + ' of 36');
             } else {
-                alert('Please fill in all required fields.');
+                alert('Please fill in all required fields (Name, Group, Contact Number).');
             }
         });
-
-        // Help button
         document.querySelector('.help-button').addEventListener('click', function() {
             alert('Help Menu:\n- Contact form owner\n- Help Forms improve\n- Report');
         });
-
-        // Switch account link
         document.querySelector('.switch-account').addEventListener('click', function(e) {
             e.preventDefault();
             alert('Switch account functionality (Demo mode)\n\nIn a real Google Form, this would allow you to switch between different Google accounts.');
         });
-
-        // Contact form owner link
-        document.querySelector('a[href="#"]').addEventListener('click', function(e) {
-            if (this.textContent === 'Contact form owner') {
-                e.preventDefault();
-                alert('Contact Form Owner (Demo mode)\n\nIn a real Google Form, this would open a dialog to contact the form creator.');
-            }
-        });
-
-        // Report link (in footer)
-        document.querySelectorAll('a[href="#"]').forEach(link => {
-            if (link.textContent === 'Report') {
+        const links = document.querySelectorAll('a[href="#"]');
+        links.forEach(link => {
+            if (link.textContent === 'Contact form owner') {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Contact Form Owner (Demo mode)\n\nIn a real Google Form, this would open a dialog to contact the form creator.');
+                });
+            } else if (link.textContent === 'Report') {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     alert('Report Form (Demo mode)\n\nIn a real Google Form, this would allow you to report suspicious or abusive content.');
